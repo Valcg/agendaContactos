@@ -1,0 +1,6 @@
+*.iml*
+.idea
+/shelf/
+/workspace.xml
+/modules.xml
+/misc.xml
