@@ -1,12 +1,15 @@
 import java.util.ArrayList;
 
+/**
+ * esta clase implementa los metodos del repositorio de la AgendaContactos
+ */
 public class AgendaContactoImpleArray implements AgendaContactos{
 
 
         private String nombreDeAgenda;
         private ArrayList<Contacto> contactos;
 
-	public AgendaDeContactosDaoImplArrayList() {
+	public AgendaContactoImpleArray() {
 
             nombreDeAgenda = "nueva agenda";
             contactos = new ArrayList<>();
@@ -23,7 +26,12 @@ public class AgendaContactoImpleArray implements AgendaContactos{
 
         }
 
-        @Override
+    /**
+     * este metodo es para dar de alta un contacto que no existe , si no existe lo agrega
+     * @param  contacto recibe el contacto(crear un nuevo contacto)
+     * @return devuelve un boolean paara saber si se dio de alta bien o no
+     */
+    @Override
         public Boolean AltaContacto(Contacto contacto) {
             if(!contactos.contains(contacto)) {
                 contactos.add(contacto);
@@ -34,7 +42,12 @@ public class AgendaContactoImpleArray implements AgendaContactos{
 
         }
 
-        @Override
+    /**
+     * este metodo elimina un contacto
+     * @param contacto recibe un contacto para eliminar
+     * @return devuelve un boolean paara saber si se dio de alta bien o no
+     */
+    @Override
         public Boolean EliminarContacto(Contacto contacto) {
 
             contactos.remove(contacto);
@@ -42,7 +55,13 @@ public class AgendaContactoImpleArray implements AgendaContactos{
             return true;
         }
 
-        @Override
+
+    /**
+     * este metodo buscas un contacto dentro del array recibiendo el nombre que es "la clave primaria"
+     * @param  nombre recibe
+     * @return te devuelve el contacto completo que estas buscando dentro del array
+     */
+    @Override
         public Contacto buscarUno(String nombre) {
             Contacto contacto = new Contacto();
             contacto.setNombre(nombre);
@@ -55,7 +74,13 @@ public class AgendaContactoImpleArray implements AgendaContactos{
             }
         }
 
-        @Override
+    /**
+     * este metodo buscas un telefono dentro del array , recibiendo el telefono pero como no sabe donde esta
+     * el telefono tiene que hacer un for
+     * @param telefono
+     * @return el contacto que localizo por el telefono
+     */
+    @Override
         public Contacto buscarTelefono(String telefono) {
 
             int posEncontrada=-1;
@@ -64,7 +89,7 @@ public class AgendaContactoImpleArray implements AgendaContactos{
             for (int i = 0; i < contactos.size(); i++) {
 
 
-                if (contactos.get(i).getTelefono()==telefono) {
+                if (contactos.get(i).getTelefono() == telefono) {
 
                     posEncontrada=i;
                     break;
@@ -81,8 +106,13 @@ public class AgendaContactoImpleArray implements AgendaContactos{
 
         }
 
+    /**
+     * buscamos un contacto por su email
+     * @param email recibe
+     * @return devuelve el contacto que buscamos por el email
+     */
 
-        @Override
+    @Override
         public Contacto buscarEmail(String email) {
 
             int posEncontrada=-1;
@@ -108,8 +138,15 @@ public class AgendaContactoImpleArray implements AgendaContactos{
 
         }
 
-        @Override
-        public ArrayList<Contacto> buscarContactosPorTresPrimeros(String nombre) {
+    /**
+     * buscamos un contacto por las tres primeras letras de su nombre para eso nos hacemos un array auxiliar
+     * donde guardaremos ese contacto que buscamos con el for , comparamos con lo que nos pasaron y si
+     * coinciden pues devolvemos el array aux donde se guardo a todas las personas qu empiezen con esos caracteres
+     * @param nombre  recibe las 3 primeras letras
+     * @return el array con las personas de esas letras
+     */
+    @Override
+        public ArrayList<Contacto> buscarContactoPortresPrimeros(String nombre) {
 
             ArrayList<Contacto> aux = new ArrayList<>();
 
@@ -125,7 +162,14 @@ public class AgendaContactoImpleArray implements AgendaContactos{
 
         }
 
-        @Override
+    /**
+     * localizamos un contacto para cambiar sus datos si lo encontramos dentro del array
+     * @param contacto recibe creando un contacto con las nuevas cosas que quieres poner
+     *  sin cambiar el nombre porque es lo que la identifica y luego le pasas el cpntacto sobre el que quieres hacer esos cambios.
+     *
+     * @return devuelve un boolean para decir si se ha cambiado bien o no
+     */
+    @Override
         public Boolean cambiarDatos(Contacto contacto) {
 
             int posicion = contactos.indexOf(contacto);
@@ -141,7 +185,13 @@ public class AgendaContactoImpleArray implements AgendaContactos{
         }
 
 
-        @Override
+    /**
+     * buscamos los contactos por las empresas entoncea hacemos el array aux para meter alli dentro a todos
+     * los contactos que tengan la misma empresa y devolver el array
+     * @param empresa la empresa que queremos buscar
+     * @return devuelve el array con los contactos por empresa
+     */
+    @Override
         public ArrayList<Contacto> ContactosPorEmpresa(String empresa) {
 
             ArrayList<Contacto> aux = new ArrayList<>();
