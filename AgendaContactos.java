@@ -12,7 +12,7 @@ public class AgendaContactos {
         Contacto buscarUno(String Nombre);
         Contacto buscarTelefono(String Telefono);
         Contacto buscarEmail(String email);
-        ArrayList<Contacto> buscarContactoPorEmpresa(String empresa);
+        ArrayList<Contacto> buscarContactoPortresPrimeros(String nombre);
         ArrayList<Contacto> contactoPorEmpresa(String empresa);
 
 
