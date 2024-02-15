@@ -1,5 +1,8 @@
 import java.util.Objects;
-
+/**
+ * Esta es la clase principal que contiene los metodos privados con los cuales estaremos trabajando
+ *estan presentes los getter , setter, constructores, equals y hashcode
+ */
 public class Contacto {
 
 
