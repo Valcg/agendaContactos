@@ -1,8 +1,10 @@
+import java.util.ArrayList;
+
 /**
  * e esta clase estan los metodos en unn repositorio que seran implementados en la interface
  */
 
-public class AgendaContactos {
+public interface AgendaContactos {
 
 
         boolean AltaContacto(Contacto contacto);
