@@ -32,7 +32,7 @@ public class AgendaContactoImpleArray implements AgendaContactos{
      * @return devuelve un boolean paara saber si se dio de alta bien o no
      */
     @Override
-        public Boolean AltaContacto(Contacto contacto) {
+        public boolean AltaContacto(Contacto contacto) {
             if(!contactos.contains(contacto)) {
                 contactos.add(contacto);
                 return true;
@@ -48,7 +48,7 @@ public class AgendaContactoImpleArray implements AgendaContactos{
      * @return devuelve un boolean paara saber si se dio de alta bien o no
      */
     @Override
-        public Boolean EliminarContacto(Contacto contacto) {
+        public boolean EliminarContacto(Contacto contacto) {
 
             contactos.remove(contacto);
 
@@ -170,7 +170,7 @@ public class AgendaContactoImpleArray implements AgendaContactos{
      * @return devuelve un boolean para decir si se ha cambiado bien o no
      */
     @Override
-        public Boolean cambiarDatos(Contacto contacto) {
+        public boolean CambiarDatos(Contacto contacto) {
 
             int posicion = contactos.indexOf(contacto);
 
@@ -192,7 +192,7 @@ public class AgendaContactoImpleArray implements AgendaContactos{
      * @return devuelve el array con los contactos por empresa
      */
     @Override
-        public ArrayList<Contacto> ContactosPorEmpresa(String empresa) {
+        public ArrayList<Contacto> contactoPorEmpresa(String empresa) {
 
             ArrayList<Contacto> aux = new ArrayList<>();
 
